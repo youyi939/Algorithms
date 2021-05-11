@@ -9,14 +9,21 @@ import java.util.Random;
  */
 public class Test {
     public static void main(String[] args) {
-        int l = 1000;
+        int l = 100000;
         shellSort(l);
+        insertionSort(l);
+        selectionSort(l);
+    }
+
+    //归并排序
+    public static void mergeSort(){
 
     }
 
 
+    //希尔排序
     public static void shellSort(int l){
-        int [] nums = new int[]{3,1,5,4,7,8,9,6,2,0};
+        int [] nums = initData(l);
         long startTime = System.currentTimeMillis();
 
         int len = nums.length;
@@ -43,7 +50,7 @@ public class Test {
 
     //插入排序
     public static void insertionSort(int l){
-        int [] nums = new int[]{3,1,5,4,7,8,9,6,2,0};
+        int [] nums = initData(l);
         long startTime = System.currentTimeMillis();
 
         int j;  //已排序列表下标
@@ -65,7 +72,7 @@ public class Test {
 
     //选择排序（鸡尾酒排序）
     public static void selectionSort(int l){
-        int [] nums = new int[]{3,1,5,4,7,8,9,6,2,0};
+        int [] nums = initData(l);
         long startTime = System.currentTimeMillis();
         int t = 0;
 
@@ -90,7 +97,8 @@ public class Test {
     //冒泡排序
     public static void bubbleSort(int l){
 
-        int [] nums = new int[]{3,1,5,4,7,8,9,6,2,0};
+        int [] nums = initData(l);
+//        int [] nums = new int[]{3,2,1,4,6,5,8,7,9,0};
         long startTime = System.currentTimeMillis();
 
         int t = 0;
@@ -104,10 +112,7 @@ public class Test {
                     nums[j] = temp;
                 }
                 t = t+1;
-                System.out.print(nums[j]);
             }
-
-            System.out.println();
         }
 
         long endTime = System.currentTimeMillis();
